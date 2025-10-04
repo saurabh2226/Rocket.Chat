@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { Server } from "socket.io";
 
-import "./config/mongo.js";
+import connectDB from "./config/mongo.js";
 
 import { VerifyToken, VerifySocketToken } from "./middlewares/VerifyToken.js";
 import chatRoomRoutes from "./routes/chatRoom.js";
@@ -26,8 +26,10 @@ app.use("/api/room", chatRoomRoutes);
 app.use("/api/message", chatMessageRoutes);
 app.use("/api/user", userRoutes);
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(`Server listening on port ${PORT}`);
+  // Try to connect to MongoDB
+  await connectDB();
 });
 
 const io = new Server(server, {

@@ -32,7 +32,8 @@ export default function Register() {
       await register(email, password);
       navigate("/profile");
     } catch (e) {
-      setError("Failed to register");
+      console.error("Registration error:", e);
+      setError(e.message || "Failed to register. Please check your email and password.");
     }
 
     setLoading(false);

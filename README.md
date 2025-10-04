@@ -1,6 +1,6 @@
-# Let's Chat
+# Rocket.Chat
 
-A real-time chat application. Another fun side project :)
+A powerful real-time chat application for seamless communication
 
 ![Screenshot from 2022-09-07 16-27-25](https://user-images.githubusercontent.com/66206865/188901222-8eefabe5-8ca2-4305-aeb3-3afa37b304b3.png)
 

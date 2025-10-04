@@ -2,6 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --accent-color: #6366f1;
+  --background-light: #f8fafc;
+  --background-dark: #1e293b;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Modern Form Inputs */
+.modern-input {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 ease-in-out;
+}
+
+.modern-input:focus {
+  @apply shadow-lg transform scale-[1.01];
+}
+
+/* Modern Buttons */
+.btn-primary {
+  @apply px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transform transition-all duration-300 ease-in-out;
+}
+
+.btn-primary:hover {
+  @apply shadow-lg -translate-y-0.5;
+}
+
+/* Chat Message Bubbles */
+.message-bubble {
+  @apply rounded-2xl px-4 py-2 max-w-[80%] break-words shadow-sm;
+}
+
+.message-bubble.sent {
+  @apply bg-indigo-600 text-white ml-auto;
+}
+
+.message-bubble.received {
+  @apply bg-gray-100 dark:bg-gray-700;
+}
+
+/* Loading Animation */
+.loading-dots {
+  @apply flex space-x-1 items-center;
+}
+
+.loading-dots div {
+  @apply w-2 h-2 bg-indigo-600 rounded-full animate-bounce;
+  animation-delay: calc(var(--dot-index) * 0.1s);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .chat-container {
+    @apply h-[calc(100vh-4rem)];
+  }
+  
+  .message-bubble {
+    @apply max-w-[90%];
+  }
+}
+
 .emoji-picker-react {
   @apply bg-white dark:bg-gray-800
   }
